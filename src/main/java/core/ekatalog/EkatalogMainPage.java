@@ -1,11 +1,13 @@
 package core.ekatalog;
 
 import core.AbstractPage;
+import core.BaseUrl;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+@BaseUrl(value = "https://ek.ua/")
 public class EkatalogMainPage extends AbstractPage {
 
     @FindBy(xpath = "//a[text()='Гаджеты']")
