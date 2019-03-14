@@ -32,4 +32,8 @@ public abstract class AbstractPage {
 
         return wait.until(jsLoad) && wait.until(jQueryLoad);
     }
+
+    public String getPageTitle() {
+        return driver.getTitle();
+    }
 }
