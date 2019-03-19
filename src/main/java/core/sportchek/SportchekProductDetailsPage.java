@@ -40,6 +40,7 @@ public class SportchekProductDetailsPage extends AbstractPage {
     }
 
     public SportcheckShopppingCartPage proceedToShoppingCartPage() {
+        waitForJsToLoad();
         redirectToShoppingCartIcon.click();
         return new SportcheckShopppingCartPage(driver);
     }

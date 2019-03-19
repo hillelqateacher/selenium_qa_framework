@@ -33,9 +33,9 @@ public class SportcheckShopppingCartPage extends AbstractPage {
     public ProductDetailsDTO getProductInfo() {
         final ProductDetailsDTO detailsDTO = new ProductDetailsDTO();
         detailsDTO.setTitle(title.getText());
-        detailsDTO.setColor(color.getText());
-        detailsDTO.setQty(qty.getText());
-        detailsDTO.setSize(size.getText());
+        detailsDTO.setColor(color.getText().replaceAll("Colour:", ""));
+        detailsDTO.setQty(qty.getAttribute("value"));
+        detailsDTO.setSize(size.getText().replaceAll("Size:", ""));
         detailsDTO.setPrice(price.getText());
         detailsDTO.setTotal(total.getText());
         return detailsDTO;

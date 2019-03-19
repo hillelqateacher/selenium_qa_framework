@@ -28,7 +28,7 @@ public abstract class AbstractPage {
                 ((JavascriptExecutor)driver).executeScript(loadJsScript).equals("complete");
 
         ExpectedCondition<Boolean> jQueryLoad = driver ->
-                ((JavascriptExecutor)driver).executeScript(loadJQueryScript).equals("0");
+                (Long)((JavascriptExecutor)driver).executeScript(loadJQueryScript) == 0;
 
         return wait.until(jsLoad) && wait.until(jQueryLoad);
     }

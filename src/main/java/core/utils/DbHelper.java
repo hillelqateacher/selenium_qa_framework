@@ -7,33 +7,33 @@ import java.sql.*;
 public class DbHelper {
 
     private static Connection connection;
-    private static PreparedStatement preparedStatement;
-    private static ResultSet resultSet;
+
+    private static final String USERNAME = UrlBuilder.getPropertyValue("database.username");
+    private static final String PASSWORD = UrlBuilder.getPropertyValue("database.password");
+    private static final String CONNECTION_STRING = UrlBuilder.getPropertyValue("database.connection.string");
 
     private DbHelper() {
     }
 
-    public static void connectToDb(final String userName, final String password, final String connectionString) throws SQLException {
-        connection = DriverManager.getConnection(connectionString, userName, password);
-    }
-
-    public static void executeQuery(final String sqlQuery) throws SQLException {
-        if (!connection.isClosed()) {
-            preparedStatement = connection.prepareStatement(sqlQuery);
-            resultSet = preparedStatement.executeQuery();
-            resultSet.next();
-        }
-    }
-
-    public static ProductDetailsDTO mapDbData() throws SQLException {
+    public static ProductDetailsDTO executeQuery(final String sqlQuery) throws SQLException {
         final ProductDetailsDTO detailsDTO = new ProductDetailsDTO();
-        final ResultSetMetaData metaData = preparedStatement.getMetaData();
-        detailsDTO.setTitle(resultSet.getString("Title"));
-        detailsDTO.setQty(resultSet.getString("Quantity"));
-        detailsDTO.setPrice(resultSet.getString("Price"));
-        detailsDTO.setTotal(resultSet.getString("Total"));
-        detailsDTO.setColor(resultSet.getString("Colour"));
-        detailsDTO.setSize(resultSet.getString("Size"));
+        if ( connection == null || connection.isClosed()) {
+            connectToDb();
+            final PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            final ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                detailsDTO.setTitle(resultSet.getString("Title"));
+                detailsDTO.setQty(resultSet.getString("Quantity"));
+                detailsDTO.setPrice(resultSet.getString("Price"));
+                detailsDTO.setTotal(resultSet.getString("Total"));
+                detailsDTO.setColor(resultSet.getString("Color"));
+                detailsDTO.setSize(resultSet.getString("Size"));
+            }
+        }
         return detailsDTO;
+    }
+
+    private static void connectToDb() throws SQLException {
+        connection = DriverManager.getConnection(CONNECTION_STRING, USERNAME, PASSWORD);
     }
 }

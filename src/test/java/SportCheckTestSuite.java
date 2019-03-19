@@ -5,6 +5,7 @@ import core.utils.DbHelper;
 import core.utils.UrlBuilder;
 import org.junit.Assert;
 import org.junit.Test;
+import org.unitils.reflectionassert.ReflectionAssert;
 
 import java.sql.SQLException;
 
@@ -16,19 +17,14 @@ public class SportCheckTestSuite extends BaseTest {
         getWebDriver().get(url);
 
         final SportchekProductDetailsPage detailsPage = new SportchekProductDetailsPage(getWebDriver());
-        detailsPage.selectRequiredSize("S");
+        detailsPage.selectRequiredSize("M");
         detailsPage.clickAddToCartButton();
 
         final SportcheckShopppingCartPage sportcheckShopppingCartPage = detailsPage.proceedToShoppingCartPage();
         final ProductDetailsDTO frontendData = sportcheckShopppingCartPage.getProductInfo();
 
-        final String dbUserName = UrlBuilder.getPropertyValue("database.username");
-        final String password = UrlBuilder.getPropertyValue("database.password");
-        final String connectionUrl = UrlBuilder.getPropertyValue("database.connection.string");
-
-        DbHelper.connectToDb(dbUserName, password, connectionUrl);
-        DbHelper.executeQuery("select * from SportCheck");
-        final ProductDetailsDTO dbData = DbHelper.mapDbData();
-        Assert.assertEquals("There is incorrect 'Title'", frontendData.getTitle(), dbData.getTitle());
+        final ProductDetailsDTO backendData = DbHelper.executeQuery("select * from SportCheck");
+        ReflectionAssert.assertReflectionEquals("There are incorrect 'Shopping Cart Data' displayed!", backendData, frontendData);
+        Assert.assertEquals("There is incorrect 'Title'", frontendData.getTitle(), backendData.getTitle());
     }
 }
