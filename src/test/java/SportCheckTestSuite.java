@@ -2,7 +2,6 @@ import core.dto.ProductDetailsDTO;
 import core.sportchek.SportcheckShopppingCartPage;
 import core.sportchek.SportchekProductDetailsPage;
 import core.utils.DbHelper;
-import core.utils.UrlBuilder;
 import org.junit.Assert;
 import org.junit.Test;
 import org.unitils.reflectionassert.ReflectionAssert;

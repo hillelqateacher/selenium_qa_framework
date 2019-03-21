@@ -17,7 +17,7 @@ public class DbHelper {
 
     public static ProductDetailsDTO executeQuery(final String sqlQuery) throws SQLException {
         final ProductDetailsDTO detailsDTO = new ProductDetailsDTO();
-        if ( connection == null || connection.isClosed()) {
+        if (connection == null || connection.isClosed()) {
             connectToDb();
             final PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
             final ResultSet resultSet = preparedStatement.executeQuery();
