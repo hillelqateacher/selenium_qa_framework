@@ -13,6 +13,10 @@ public class BaseTest {
         return webDriver;
     }
 
+    public void setUpDriver(final String browserName) {
+        webDriver = WebDriverFactory.getWebDriverImpl(browserName);
+    }
+
     @Before
     public void driverSetUp() {
         final String browserName = System.getProperty("wedriver.name");

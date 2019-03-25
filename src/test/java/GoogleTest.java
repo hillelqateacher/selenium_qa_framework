@@ -39,10 +39,8 @@ public class GoogleTest extends BaseTest {
         final GoogleSearchResultPage googleSearchResultPage = mainPage.searFor("hillel");
         final List<String> searchResults = googleSearchResultPage.getSearchResultItems();
         searchResults.forEach(item -> {
-
             String failedTestMessage = String.format("There is incorrect link text in link [%s]", item);
             Assert.assertTrue(failedTestMessage, item.toLowerCase().contains("hillel"));
-
         });
     }
 }
