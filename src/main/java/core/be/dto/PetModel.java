@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PetModel {
 
-    private Integer id;
+    private Long id;
     private Category category;
     private String name;
     private String[] photoUrls;
