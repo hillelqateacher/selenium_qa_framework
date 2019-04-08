@@ -7,8 +7,10 @@ import io.restassured.filter.log.ResponseLoggingFilter;
 public abstract class AbstractApi {
 
     public AbstractApi() {
-        RestAssured.baseURI = "https://petstore.swagger.io";
+        RestAssured.baseURI = setUpBaseUrl();
         RestAssured.filters(new RequestLoggingFilter());
         RestAssured.filters(new ResponseLoggingFilter());
     }
+
+    protected abstract String setUpBaseUrl();
 }

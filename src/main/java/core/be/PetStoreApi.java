@@ -3,7 +3,6 @@ package core.be;
 import core.be.dto.PetModel;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
 
 public class PetStoreApi extends AbstractApi {
 
@@ -15,5 +14,10 @@ public class PetStoreApi extends AbstractApi {
                 .body(petBody)
                 .post(ADD_NEW_PET_PARTIAL_LINK)
                 .as(PetModel.class);
+    }
+
+    @Override
+    protected String setUpBaseUrl() {
+        return "https://petstore.swagger.io";
     }
 }
