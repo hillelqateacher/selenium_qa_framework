@@ -1,6 +1,6 @@
-import core.dto.ProductDetailsDTO;
-import core.sportchek.SportcheckShopppingCartPage;
-import core.sportchek.SportchekProductDetailsPage;
+import core.fe.dto.ProductDetailsDTO;
+import core.fe.sportchek.SportcheckShopppingCartPage;
+import core.fe.sportchek.SportchekProductDetailsPage;
 import core.utils.DbHelper;
 import org.junit.Assert;
 import org.junit.Test;

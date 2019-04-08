@@ -1,7 +1,6 @@
-package core.iframe;
+package core.fe.iframe;
 
-import core.AbstractPage;
-import org.openqa.selenium.Alert;
+import core.fe.AbstractPage;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

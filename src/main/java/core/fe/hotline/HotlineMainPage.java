@@ -1,7 +1,7 @@
-package core.hotline;
+package core.fe.hotline;
 
-import core.AbstractPage;
-import core.BaseUrl;
+import core.fe.AbstractPage;
+import core.fe.BaseUrl;
 import org.openqa.selenium.WebDriver;
 
 @BaseUrl(value = "https://hotline.ua")

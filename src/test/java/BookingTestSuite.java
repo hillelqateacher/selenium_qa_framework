@@ -1,5 +1,5 @@
-import core.boking.BookingFlyTicketsPage;
-import core.boking.BookingMainPage;
+import core.fe.boking.BookingFlyTicketsPage;
+import core.fe.boking.BookingMainPage;
 import org.junit.Assert;
 import org.junit.Test;
 

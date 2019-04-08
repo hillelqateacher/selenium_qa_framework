@@ -1,7 +1,7 @@
-package core.ekatalog;
+package core.fe.ekatalog;
 
-import core.AbstractPage;
-import core.BaseUrl;
+import core.fe.AbstractPage;
+import core.fe.BaseUrl;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

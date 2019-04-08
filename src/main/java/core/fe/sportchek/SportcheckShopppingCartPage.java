@@ -1,7 +1,7 @@
-package core.sportchek;
+package core.fe.sportchek;
 
-import core.AbstractPage;
-import core.dto.ProductDetailsDTO;
+import core.fe.AbstractPage;
+import core.fe.dto.ProductDetailsDTO;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

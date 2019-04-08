@@ -1,6 +1,6 @@
-package core.boking;
+package core.fe.boking;
 
-import core.AbstractPage;
+import core.fe.AbstractPage;
 import org.openqa.selenium.WebDriver;
 
 public class BookingFlyTicketsPage extends AbstractPage {

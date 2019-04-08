@@ -1,6 +1,6 @@
-package core.hotline;
+package core.fe.hotline;
 
-import core.AbstractPage;
+import core.fe.AbstractPage;
 import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

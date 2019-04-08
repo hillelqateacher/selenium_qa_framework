@@ -1,5 +1,5 @@
-import core.hotline.ProductDetailsPage;
-import core.hotline.ShoppingCartPage;
+import core.fe.hotline.ProductDetailsPage;
+import core.fe.hotline.ShoppingCartPage;
 import core.utils.UrlBuilder;
 import org.junit.Assert;
 import org.junit.Test;

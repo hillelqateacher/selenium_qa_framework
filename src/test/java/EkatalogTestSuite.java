@@ -1,6 +1,6 @@
-import core.ekatalog.EkatalogMainPage;
-import core.ekatalog.EkatalogMobilePhonesPage;
-import core.ekatalog.FilterMobilePhonesPage;
+import core.fe.ekatalog.EkatalogMainPage;
+import core.fe.ekatalog.EkatalogMobilePhonesPage;
+import core.fe.ekatalog.FilterMobilePhonesPage;
 import org.junit.Assert;
 import org.junit.Test;
 

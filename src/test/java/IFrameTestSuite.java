@@ -1,4 +1,4 @@
-import core.iframe.SiteWithIFrameMainPage;
+import core.fe.iframe.SiteWithIFrameMainPage;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,5 @@
-import core.google.GoogleMainPage;
-import core.google.GoogleSearchResultPage;
+import core.fe.google.GoogleMainPage;
+import core.fe.google.GoogleSearchResultPage;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
